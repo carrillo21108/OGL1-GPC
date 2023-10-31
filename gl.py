@@ -66,9 +66,6 @@ class Renderer(object):
                                                     1,GL_FALSE,glm.value_ptr(self.getViewMatrix()))
             glUniformMatrix4fv(glGetUniformLocation(self.activeShader,"projectionMatrix"),
                                                     1,GL_FALSE,glm.value_ptr(self.projectionMatrix))
-            glUniform1f(glGetUniformLocation(self.activeShader,"time"),self.elapsedTime)            
-            
-            glUniform3fv(glGetUniformLocation(self.activeShader,"dirLight"),1,glm.value_ptr(self.dirLight))
 
         for obj in self.scene:
             if self.activeShader is not None:
